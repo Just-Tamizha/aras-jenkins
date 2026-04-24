@@ -34,6 +34,7 @@ async function main() {
   }
 }
 function validateFolders() {
+  if (!fs.existsSync(adminSqlDir)) throw new Error(`SQL folder not found: ${adminSqlDir}`);
   if (!fs.existsSync(sqlDir)) throw new Error(`SQL folder not found: ${sqlDir}`);
   if (!fs.existsSync(xmlDir)) throw new Error(`XML folder not found: ${xmlDir}`);
 }

@@ -5,8 +5,8 @@ pipeline {
         string(name: 'BRANCH_NAME', defaultValue: 'dev4_EnE2.5', description: 'Select your Branch')
         string(name: 'INSTANCE_NAME', defaultValue: 'console', description: 'Name your Instance Name')
         choice(name: 'SYSTEM_LABEL', choices: ['vs24','Japan-AHEAD-QA'], description: 'Select your Agent node')
-        choice(name: 'REPOSITORY_PATH', choices: ['C:\\VINOTH\\1-Honda\\ARASBUILD'], description: 'Update your Repo Path')
-        choice(name: 'POST_DEPLOYMENT_PATH', choices: ['C:\\VINOTH\\1-Honda\\ARAS-AUTO'], description: 'Update Post Deployement Script Path')
+        choice(name: 'REPOSITORY_PATH', choices: ['C:\\VINOTH\\1-Honda\\ARAS_JENKINS','C:\\VINOTH\\1-Honda\\ARASBUILD'], description: 'Update your Repo Path')
+        choice(name: 'POST_DEPLOYMENT_PATH', choices: ['C:\\VINOTH\\1-Honda\\aras-jenkins'], description: 'Update Post Deployement Script Path')
 
         string(name: 'DB_USER', defaultValue: 'sa', description: 'Database UserName?')
         string(name: 'DB_PASS', defaultValue: 'innovator', description: 'Database Password?')
@@ -62,6 +62,7 @@ pipeline {
                     echo '▶️ Running BuildAndDeploy.ps1'
                     // powershell '.\\BuildAndDeploy.ps1 -UpdateInstance -SkipPrerequisites'
                     // powershell '.\\BuildAndDeploy.ps1'
+                    // powershell '.\\runner.ps1'
                     echo '✅ Build script execution finished'
                 }
             }
